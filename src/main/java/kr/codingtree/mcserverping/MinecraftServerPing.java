@@ -22,6 +22,29 @@ public class MinecraftServerPing {
 
     private final int STATUS_HANDSHAKE = 1;
 
+    public MinecraftServerSimpleResponse getServerPing(String hostname) {
+        return getServerPing(hostname, 25565, 1000, 4, true);
+    }
+
+    public MinecraftServerSimpleResponse getServerPing(String hostname, boolean simple) {
+        return getServerPing(hostname, 25565, 1000, 4, simple);
+    }
+    public MinecraftServerSimpleResponse getServerPing(String hostname, int port) {
+        return getServerPing(hostname, port, 1000, 4, true);
+    }
+
+    public MinecraftServerSimpleResponse getServerPing(String hostname, int port, boolean simple) {
+        return getServerPing(hostname, port, 1000, 4, simple);
+    }
+    public MinecraftServerSimpleResponse getServerPing(String hostname, int port, int timeout) {
+        return getServerPing(hostname, port, timeout, 4, true);
+    }
+    public MinecraftServerSimpleResponse getServerPing(String hostname, int port, int timeout, boolean simple) {
+        return getServerPing(hostname, port, timeout, 4, simple);
+    }
+    public MinecraftServerSimpleResponse getServerPing(String hostname, int port, int timeout, int protocolVersion) {
+        return getServerPing(hostname, port, timeout, protocolVersion, true);
+    }
     public MinecraftServerSimpleResponse getServerPing(String hostname, int port, int timeout, int protocolVersion, boolean simple) {
         long status_ping = -1;
 
